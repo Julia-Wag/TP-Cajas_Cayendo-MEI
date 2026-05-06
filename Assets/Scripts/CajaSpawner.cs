@@ -33,6 +33,5 @@ public class CajaSpawner : MonoBehaviour
         currentPosition.x = newX;
         currentPosition.y = startYValue;
         transform.position = currentPosition;
-        //Tarea 2: cuando la caja toque el piso no se destruya, se repocisiona, usando esta funcion
     }
 }

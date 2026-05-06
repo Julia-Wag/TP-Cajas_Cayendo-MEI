@@ -17,15 +17,21 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
-            transform.Translate(-2, 0, 0);
-            //PONER LIMITE A ESTO DE TAREA
+            if(transform.position.x > -2)
+            {
+                transform.Translate(-2, 0, 0);
+            }
         }
+
         if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
-            transform.Translate(2, 0, 0);
+            if(transform.position.x < 2)
+            {
+                transform.Translate(2, 0, 0);
+            }
         }
-    
     }
+    
 
     void OnCollisionEnter(Collision col)
     {
