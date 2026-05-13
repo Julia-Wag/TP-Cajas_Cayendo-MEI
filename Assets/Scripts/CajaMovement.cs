@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CajaMovement : MonoBehaviour
 {
-    public float speed;
+    public float speed = 6f;
+
+    public TimerScript timerScript;
     
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, -speed, 0);
+        if(timerScript.gameOver == false)
+        {
+            transform.Translate(0, -speed * Time.deltaTime, 0);
+        }
     }
 }

@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class CajaCollision : MonoBehaviour
 {
+    public float speedIncrease = 1f;
+
     void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.CompareTag("Caja"))
         {
             col.gameObject.GetComponent<CajaSpawner>().LocateBoxAtRandomPosition();
-        }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            col.gameObject.GetComponent<CajaMovement>().speed += speedIncrease;
+        }
     }
 }
